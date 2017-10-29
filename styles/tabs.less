@@ -6,10 +6,9 @@
 // Overrides: atom/tabs
 
 .tab-bar {
-  background-color: @tab-bar-background-color;
-  // background-color: black;
+  background-color: darken(@tab-bar-background-color, 1%);
   border-bottom: 1px solid @base-border-color;
-
+  min-height: 30px;
   .tab {
     color: @text-color;
     height: @tab-height;
