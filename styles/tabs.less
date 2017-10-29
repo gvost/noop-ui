@@ -17,23 +17,58 @@
     font-size: @font-size;
     border-right: 1px solid @tab-border-color;
     background-color: @tab-background-color;
+    border-left: 1px solid transparent;
+    position: relative;
+    &.pending-tab {
+      color: lighten(@black, 10%);
+    }
     &[data-type='TreeView'] {
       max-width: 100%;
       background: black;
       border-right: 0;
+      &.active {
+        color: @light-orange;
+        text-decoration: underline;
+        text-decoration-color: @light-orange;
+        // &:before {
+        //   content: ' ';
+        //   position: absolute;
+        //   height: 0.75px;
+        //   width: 100%;
+        //   background-color: transparent;
+        //   left: 0;
+        //   bottom: 0;
+        // }
+      }
     }
     &.active {
-      color: @text-color-selected;
+      color: @light-orange;
+      font-weight: 100;
+      font-style: italic;
+      text-decoration: underline;
+      text-decoration-color: @light-orange;
       background-color: @tab-background-color;
+      // &:before {
+      //   content: ' ';
+      //   position: absolute;
+      //   height: 0.75px;
+      //   width: 100%;
+      //   background-color: @light-orange;
+      //   left: 0;
+      //   bottom: 0;
+      // }
     }
-
+    &.modified {
+      color: @purple;
+      font-weight: bold;
+    }
 
     // Modified Icon (the blue circle) -------------------
     &.modified:not(:hover) .close-icon {
       top: 50%;
       right: @component-padding + 4px; // 4px -> half of icon size
       margin-top: -3px;
-      border-color: @text-color-info;
+      border-color: @purple;
     }
     &.modified:hover .close-icon {
       color: currentColor;
@@ -60,7 +95,4 @@
       }
     }
   }
-}
-.tab.sortable:last-child {
-  border-right: 0;
 }

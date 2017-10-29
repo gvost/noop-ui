@@ -1,0 +1,32 @@
+background-tips {
+  .background-message {
+    font-size: 15px;
+    .message {
+      font-weight: 100;
+      color: @very-dark-gray;
+    }
+  }
+}
+.overlay, atom-panel.modal {
+  top: 50%!important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  border: 0;
+  opacity: 0.8;
+  width: 600px;
+  margin: 0;
+  background-color: @black;
+  atom-text-editor.editor.mini {
+    box-shadow: inset 0px 1px 10px 0px @black;
+    border: 1px solid @cyan;
+    max-height: none;
+    div {
+      line-height: 38px;
+      font-size: 19px;
+    }
+    .cursors {
+      height: 20px;
+    }
+  }
+}

@@ -12,8 +12,7 @@
 
     // We want to highlight the background of the list items because we dont know their size.
     &.selected {
-      color: @text-color-selected;
-      background-color: @background-color-selected;
+      background-color: @app-background-color;
       &:before{ display: none; }
     }
   }
@@ -22,8 +21,21 @@
 
 // List Tree -------------------
 .list-tree {
+  li:not(.list-nested-item) {
+    line-height: 28px;
+  }
+  .list-item {
+    color: @light-gray;
+    &.status-added { color: @cyan; }
+    &.status-ignored { color: @dark-gray; }
+    &.status-modified { color: @light-orange; }
+    &.status-renamed { color: @orange; }
+  }
   .selected {
-    color: @text-color-selected;
+    text-shadow: 1px 2px 3px @dark-gray;
+    &:before {
+      display: none;
+    }
   }
 }
 
